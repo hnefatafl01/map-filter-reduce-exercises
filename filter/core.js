@@ -8,21 +8,17 @@ function onlyEven (array) {
 };
 
 function onlyOneWord (array) {
-  // your code here
-  // return array.filter(function(index) {
-  //   var single;
-  //   for (var i = 0; i < index.length; i++) {
-  //     if (index[i] === " ") {
-  //       single = index;
-  //       return single;
-  //     } else {
-  //       return null;
-  //     }
-  //   }
-  //   if (single) {
-  //     return single;
-  //   }
-  // })
+  return array.filter((element, index) => {
+    let space;
+    for (var i = 0; i < element.length; i++) {
+      if (element[i] === " ") {
+        return space;
+      }
+    }
+    if(!space){
+      return element
+    }
+  })
 };
 
 function positiveRowsOnly (array) {
