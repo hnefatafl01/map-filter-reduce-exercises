@@ -22,15 +22,27 @@ function onlyOneWord (array) {
 };
 
 function positiveRowsOnly (array) {
-  //your code here
-  //iterate through array
-  //filter each index array for positives
+  return array.filter((row, index, array) => {
+      let neg = row.some((element) => {
+        return element < 0;
+      })
+      if(!neg) {
+        return row;
+      }
+  })
+
 };
 
-
-
 function allSameVowels (array) {
-  // your code here
+  return array.filter((element) => {
+    let vowels = element.match(/[aeiou]/g);
+    let same = vowels.every((el, index, array) => {
+      return el === array[0]
+    })
+    if(same) {
+      return element
+    }
+  })
 };
 
 module.exports = {
