@@ -13,11 +13,21 @@ function productAll (array) {
 };
 
 function objectify (array) {
-  // your code here
+  return array.reduce((obj,val) => {
+    obj[val[0]] = val[1]
+    return obj
+  },{})
 };
 
 function luckyNumbers (array) {
-  // your code here
+  return array.reduce((acc,val,idx,arr) => {
+    // if(idx = arr.length - 1) {
+    //   console.log(acc);
+    //   return acc + ',and ' + val.toString();
+    // }
+      console.log(acc);
+      return acc + val.toString() + ', '
+  }, 'Your lucky numbers are: ')
 };
 
 module.exports = {
