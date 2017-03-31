@@ -21,12 +21,14 @@ function objectify (array) {
 
 function luckyNumbers (array) {
   return array.reduce((acc,val,idx,arr) => {
-    // if(idx = arr.length - 1) {
-    //   console.log(acc);
-    //   return acc + ',and ' + val.toString();
-    // }
+    if(idx + 1 === arr.length) {
       console.log(acc);
-      return acc + val.toString() + ', '
+      console.log( (',and ' + val).toString());
+      return acc + (',and ' + val).toString();
+    }
+      // console.log( ' ' + (val  + ', ').toString());
+      return (val  + ', ').toString();
+
   }, 'Your lucky numbers are: ')
 };
 
